@@ -15,7 +15,20 @@ $(".col-10").on("click", "div", function() {
 
 
 $(document).ready(function() {
-  var time = moment().format("dddd, MMMM Do YYYY");
+  var date = moment().format("dddd, MMMM Do YYYY");
     
-  document.getElementById("currentDay").textContent = time;
-  });
+  document.getElementById("currentDay").textContent = date;
+});
+
+
+var time = moment();
+
+  if (moment().isAfter(time)) {
+    $("#due").addClass("past");
+  }
+  else if (moment().isBefore(time)) {
+    $("#due").addClass("future");
+  }
+  else if (moment().isSame(time)) {
+    $("#due").addClass("present");
+  };
