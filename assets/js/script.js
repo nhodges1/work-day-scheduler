@@ -12,4 +12,10 @@ $(".col-10").on("click", "div", function() {
     $(this).replaceWith(textInput);
 
 });
-  
+
+
+$(document).ready(function() {
+  var time = moment().format("dddd, MMMM Do YYYY");
+    
+  document.getElementById("currentDay").textContent = time;
+  });
