@@ -1,12 +1,12 @@
 var tasks = {};
 
-$(".col-10").on("click", "div", function() {
+$("#due").click("div", function() {
     var text = $(this)
       .text()
       .trim();
   
     var textInput = $("<textarea>")
-      .addClass("text-area")
+      .addClass("time-block")
       .val(text);
 
     $(this).replaceWith(textInput);
