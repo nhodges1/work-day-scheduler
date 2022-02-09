@@ -35,3 +35,4 @@ The following animation demonstrates the application functionality:
 ![day planner demo](./Assets/work-schedule.png)
 
 Deployed application:
+https://nhodges1.github.io/work-day-scheduler/
