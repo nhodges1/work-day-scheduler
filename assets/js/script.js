@@ -46,46 +46,23 @@ $(document).ready(function() {
       }
     });
   }
-  
-})
 
+  hourUpdater();
 
-// display current day on page
-$('#currentDay').text(moment().format('dddd, MMMM Do'));
+  // check if current time needs to be updated
+  var interval = setInterval(hourUpdater, 15000);
 
+  // load saved data from localStorage
+  $('hour-9 .description').val(localStorage.getItem('hour-9'));
+  $('hour-10 .description').val(localStorage.getItem('hour-10'));
+  $('hour-11 .description').val(localStorage.getItem('hour-11'));
+  $('hour-12 .description').val(localStorage.getItem('hour-12'));
+  $('hour-13 .description').val(localStorage.getItem('hour-13'));
+  $('hour-14 .description').val(localStorage.getItem('hour-14'));
+  $('hour-15 .description').val(localStorage.getItem('hour-15'));
+  $('hour-16 .description').val(localStorage.getItem('hour-16'));
+  $('hour-17 .description').val(localStorage.getItem('hour-17'));
 
-
-var tasks = {};
-
-$("#due").click("div", function() {
-    var text = $(this)
-      .text()
-      .trim();
-  
-    var textInput = $("<textarea>")
-      .addClass("time-block")
-      .val(text);
-
-    $(this).replaceWith(textInput);
-
+  // display current day on page
+  $('#currentDay').text(moment().format('dddd, MMMM Do'));
 });
-
-
-$(document).ready(function() {
-  var date = moment().format("dddd, MMMM Do YYYY");
-    
-  document.getElementById("currentDay").textContent = date;
-});
-
-
-var time = moment();
-
-  if (moment().isAfter(time)) {
-    $("#due").addClass("past");
-  }
-  else if (moment().isBefore(time)) {
-    $("#due").addClass("future");
-  }
-  else if (moment().isSame(time)) {
-    $("#due").addClass("present");
-  };
